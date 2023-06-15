@@ -1,0 +1,25 @@
+#Check Type: Combat.
+#Check Name: HitboxA.
+
+HitboxA:
+  #Note: HitboxA detects Reach
+  #
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 7
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+HitboxA_advanced:
+  #How much to expand hitbox?
+  ExpandHitboxBy: 0.1
+  #Maximum range you can hit an opponent
+  MaxReach: 3.5
+  #Maximum range you can hit an opponent for Bedrock clients ONLY
+  MaxReachForBedrockClients: 5.0

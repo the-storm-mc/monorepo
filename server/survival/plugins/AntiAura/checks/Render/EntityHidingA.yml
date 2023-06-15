@@ -1,0 +1,27 @@
+#Check Type: Render.
+#Check Name: EntityHidingA.
+
+EntityHidingA:
+  #Enable entity hiding?
+  Enabled: true
+  #Offloads CPU cost of hiding entities into another core.
+  UseAsync: true
+  #Cast sight rays from the cameras position in F5 mode?
+  RaysFromF5Mode: false
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+EntityHidingA_advanced:
+  #Cast rays from above player head (e.g. give visibility if sprinting up hill)
+  #Can help with entities suddenly appearing, at the cost of performance
+  RaysFromAbove: false
+  #Hide entities instantly upon loading?
+  HideEntityWhenLoaded: true
+  #Hide ALL entities behind a player?
+  #Most servers will keep this disabled, unless you really need sneak attacks or something.
+  HidePlayersBehind: false

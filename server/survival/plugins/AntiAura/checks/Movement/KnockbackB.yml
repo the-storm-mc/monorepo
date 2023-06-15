@@ -1,0 +1,19 @@
+#Check Type: Movement.
+#Check Name: KnockbackB.
+
+KnockbackB:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 6
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+KnockbackB_advanced:
+  #Maximum deviation (based on a single move packet) from the expected knockback?
+  MaxDeviation: 0.03

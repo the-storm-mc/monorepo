@@ -1,0 +1,26 @@
+#Check Type: Movement.
+#Check Name: FlightB.
+
+FlightB:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+FlightB_advanced:
+  #Exempt for a short time after flight is enabled to allow compatibility for jump pads?.
+  DoubleJumpCompatibility: false
+  #1.8 clients use 0.9800000190734863 and 1.9+ uses 0.98
+  #Value to use for 1.9+ clients.
+  MultiplyPerTick: 0.98
+  #Value to use for 1.8 clients.
+  MultiplyPerTickOnOnePointEight: 0.9800000190734863
+  #The max deviation from predicted path per packet.
+  MaximumLeniency: 0.055

@@ -1,0 +1,20 @@
+#Check Type: Movement.
+#Check Name: SpeedA.
+
+SpeedA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+SpeedA_advanced:
+  #If player speed is greater than 10, max speed will be increased gradually up to 17
+  #This is to help limit hacks that make a player accelerate too quickly
+  IncreaseSpeed: 0.28

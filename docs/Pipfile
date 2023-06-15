@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pillow = "*"
+cairosvg = "*"
+mkdocs-git-revision-date-localized-plugin = "*"
+mkdocs-git-authors-plugin = "*"
+mkdocs-glightbox = "*"
+mkdocs-material = { git = 'git+https://${MKDOCS_GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git', ref = '9.1.15-insiders-4.35.3' }
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

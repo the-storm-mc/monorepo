@@ -1,0 +1,24 @@
+#Check Type: World.
+#Check Name: FastPlaceA.
+
+FastPlaceA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+FastPlaceA_advanced:
+  #Max blocks a player can place in 1 second.
+  MaxBlocksAllowedPerSecond: 6
+  #
+  #A placement is considered TOWERING if block is placed less than TowerDistance away AND below their feet
+  TowerDistance: 0.5
+  #IF (PLAYER IS TOWERING): Max blocks a player can place in 1 second.
+  MaxTowerPerSec: 4

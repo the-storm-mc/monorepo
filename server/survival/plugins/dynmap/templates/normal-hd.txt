@@ -1,0 +1,37 @@
+version: 0.20
+templates:
+  normal-hd:
+    enabled: true
+    maps:
+      - class: org.dynmap.hdmap.HDMap
+        name: flat
+        title: "Flat"
+        icon: "images/block_world_flat.png"
+        prefix: flat
+        perspective: iso_S_90_medres
+        shader: stdtexture
+        lighting: brightnightandday
+      - class: org.dynmap.hdmap.HDMap
+        name: isometric
+        title: "Isometric"
+        icon: "images/block_world_surface.png"
+        prefix: isometric
+        perspective: iso_SE_30_medres
+        shader: stdtexture
+        lighting: brightnightandday
+      - class: org.dynmap.hdmap.HDMap
+        name: topographic
+        title: "Topographic"
+        icon: "images/block_world_cave.png"
+        prefix: topographic
+        perspective: iso_SE_30_medres
+        shader: topo256-noplants
+        lighting: default
+      - class: org.dynmap.hdmap.HDMap
+        name: density
+        title: "Player Density"
+        icon: "images/block_world_biome.png"
+        prefix: density
+        perspective: iso_S_90_medres
+        shader: inhabited
+        lighting: default

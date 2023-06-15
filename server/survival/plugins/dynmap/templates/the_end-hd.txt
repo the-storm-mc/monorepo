@@ -1,0 +1,21 @@
+version: 0.20
+templates:
+  the_end-hd:
+    enabled: true
+    maps:
+      - class: org.dynmap.hdmap.HDMap
+        name: flat
+        title: "Flat"
+        icon: "images/block_the_end_flat.png"
+        prefix: flat
+        perspective: iso_S_90_medres
+        shader: stdtexture
+        lighting: brightnight
+      - class: org.dynmap.hdmap.HDMap
+        name: isometric
+        title: "Isometric"
+        icon: "images/block_the_end_surface.png"
+        prefix: isometric
+        perspective: iso_SE_30_medres
+        shader: stdtexture
+        lighting: brightnight

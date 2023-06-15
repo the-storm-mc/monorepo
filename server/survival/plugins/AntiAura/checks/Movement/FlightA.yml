@@ -1,0 +1,8 @@
+#Check Type: Movement.
+#Check Name: FlightA.
+
+FlightA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10

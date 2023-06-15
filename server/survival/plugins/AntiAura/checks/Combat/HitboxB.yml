@@ -1,0 +1,24 @@
+#Check Type: Combat.
+#Check Name: HitboxB.
+
+HitboxB:
+  #Note: HitboxB detects Angle
+  #This check relies on HitboxA. If HitboxA is disabled, this check will also be disabled.
+  #
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 7
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+HitboxB_advanced:
+  #ExpandHitbox expands the hitbox by 30% in case of laggy connections and stuff.
+  #This makes the angle check a bit more lenient, but can reduce false positives.
+  #If you run a hardcore PVP server, consider disabling this.
+  ExpandHitbox: true

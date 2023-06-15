@@ -1,0 +1,8 @@
+{
+	acme_dns route53
+}
+
+livemap.ts-mc.net {
+	root * /livemap
+	file_server
+}

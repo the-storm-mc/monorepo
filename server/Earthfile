@@ -1,0 +1,43 @@
+VERSION 0.7
+PROJECT sjerred/monorepo
+FROM ubuntu:jammy
+WORKDIR /workspace
+ARG --required stage
+
+gomplate:
+  FROM golang:1.20
+  WORKDIR /workspace
+  RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@v3.11.5
+
+render.compose:
+  FROM +gomplate
+  COPY compose.yml.tmpl .
+  RUN --secret=BORG_PASSPHRASE=borg_passphrase --secret=DATADOG_API_KEY=datadog_api_key --secret=AWS_ACCESS_KEY_ID=aws_access_key_id --secret=AWS_SECRET_ACCESS_KEY=aws_secret_access_key gomplate -f compose.yml.tmpl -o compose.yml
+  SAVE ARTIFACT compose.yml
+
+build:
+  COPY +render.compose/ .
+  COPY config config/
+  COPY ./survival+build/ servers/survival/$stage
+  COPY ./creative+build/ servers/creative/$stage
+  SAVE ARTIFACT ./*
+
+rsync:
+  FROM alpine:3
+  RUN apk add rsync openssh
+  RUN mkdir -p /root/.ssh/
+  COPY known_hosts /root/.ssh/known_hosts
+
+sync:
+  FROM +rsync
+  ARG --required stage
+  WORKDIR /workspace
+  COPY (+build/ --stage=$stage) .
+  RUN --secret=SSH_PRIVATE_KEY=ssh_private_key echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+  RUN --push rsync --progress -a --checksum * ubuntu@mminecraft.ts-mc.net:/home/ubuntu
+
+up:
+  ARG --required stage
+  FROM +sync --stage=$stage
+  RUN --secret=SSH_PRIVATE_KEY=ssh_private_key echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+  RUN --push ssh ubuntu@minecraft.ts-mc.net "cd /home/ubuntu && docker compose pull && docker compose build && docker compose down --remove-orphans && docker compose up -d --remove-orphans"

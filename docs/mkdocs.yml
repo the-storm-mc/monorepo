@@ -1,0 +1,102 @@
+site_name: The Storm
+site_description: Documentation for The Storm Minecraft server
+site_url: https://docs.ts-mc.net
+strict: false
+repo_name: GitHub
+repo_url: https://github.com/the-storm-mc/monorepo
+edit_uri: edit/main/docs/docs/
+extra:
+  analytics:
+    provider: google
+    property: G-BRM0D8QZ58
+    feedback:
+      title: "Was this page helpful?"
+      ratings:
+          - icon: material/thumb-up-outline
+            name: This page was helpful
+            data: 1
+            note: >-
+              Thanks for your feedback!
+          - icon: material/thumb-down-outline
+            name: This page could be improved
+            data: 0
+            note: >-
+              Thanks for your feedback! Help us improve this page by
+              using our <a href="https://github.com/the-storm-mc/monorepo/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">opening an issue</a>.
+  homepage: https://ts-mc.net
+extra_css:
+    - stylesheets/extra.css
+plugins:
+  - glightbox
+  - search
+  - social:
+      cards_color:
+        fill: "#00d0c6"
+        text: "#FFFFFF"
+  - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-authors
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - abbr
+  - admonition
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.tasklist
+theme:
+    name: material
+    icon:
+      repo: fontawesome/brands/github
+    favicon: assets/images/favicon.svg
+    font:
+        code: Fira Code
+        text: Lato
+    features:
+        - announce.dismiss
+        - navigation.instant
+        - navigation.tracking
+        - navigation.sections
+        - navigation.expand
+        - navigation.indexes
+        - navigation.prune
+        - toc.follow
+        - navigation.top
+        - search
+        - search.suggest
+        - search.highlight
+        - social
+        - tags
+        - header.autohide
+    font:
+        text: Lato
+        code: Fira Mono
+    logo: assets/images/logo_square.svg
+    palette:
+        # Palette toggle for automatic mode
+        - media: "(prefers-color-scheme)"
+          toggle:
+              icon: material/brightness-auto
+              name: Switch to light mode
+          primary: teal
+          accent: teal
+        - scheme: default
+          media: "(prefers-color-scheme: light)"
+          toggle:
+              icon: material/weather-night
+              name: Switch to dark mode
+          primary: teal
+          accent: teal
+        - scheme: slate
+          media: "(prefers-color-scheme: dark)"
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to system preference
+          primary: teal
+          accent: teal

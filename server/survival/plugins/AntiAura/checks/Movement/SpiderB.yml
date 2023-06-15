@@ -1,0 +1,19 @@
+#Check Type: Movement.
+#Check Name: SpiderB.
+
+SpiderB:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+SpiderB_advanced:
+  #The amount of distance between the last block and the new one (on the Y axis)
+  MaxDistBetweenOnGroundLocations: 1.45

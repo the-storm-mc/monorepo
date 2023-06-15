@@ -1,0 +1,33 @@
+#Check Type: Movement.
+#Check Name: KnockbackA.
+
+KnockbackA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 6
+  #Violation Level to drag player back.
+  DragBackThreshold: 2
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+KnockbackA_advanced:
+  #Yeah this advanced section has WAY too many options. Sorry!
+  #
+  #Amount to lower the violation level on successful knockback.
+  LowerAmount: 0.5
+  #Tiny knockbacks below this value are not checked.
+  MinimumKnockbackCheck: 0.1
+  #Cast more rays to check if they collide into a wall behind the player?
+  MoreRays: true
+  #How many ticks after a hit to check the player has actually received knockback.
+  TicksAfterHitToCheck: 15
+  #How much leniency to give.
+  KnockbackLeniency: 1.0
+  #From -1 to 1, how much the player must follow the direction of knockback.
+  IntendedDirection: -0.3

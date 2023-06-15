@@ -1,0 +1,10 @@
+#Check Type: Movement.
+#Check Name: ElytraA.
+
+ElytraA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+  #Spawn a villager on the simulated elytra path?
+  EntityDebug: false

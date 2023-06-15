@@ -1,0 +1,46 @@
+VERSION 0.7
+PROJECT sjerred/monorepo
+
+pipenv:
+  FROM python:3.11
+  RUN pip install pipenv
+  RUN apt update
+  RUN apt install -y git
+
+lock:
+  FROM +pipenv
+  COPY Pipfile* .
+  RUN --secret=MKDOCS_GH_TOKEN=mkdocs_github_token pipenv lock
+  SAVE ARTIFACT Pipfile.lock AS LOCAL Pipfile.lock
+
+deps:
+  FROM +pipenv
+  COPY Pipfile* .
+  RUN --secret=MKDOCS_GH_TOKEN=mkdocs_github_token pipenv install
+
+build:
+  FROM +deps
+  WORKDIR /workspace/docs
+  COPY docs docs
+  COPY mkdocs.yml .
+  # Required for committer information
+  COPY ../+git/ ../
+  RUN pipenv run mkdocs build
+  SAVE ARTIFACT site/*
+
+dev:
+  LOCALLY
+  RUN pipenv run mkdocs serve
+
+deploy:
+  ARG prod=false
+  FROM node:lts
+  ENV NETLIFY_SITE_ID=0495746a-9a90-43a0-a262-e49ac217f814
+  RUN npm i -g netlify-cli
+  COPY +build/ site
+  RUN --push --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli link
+  IF [ $prod = "true" ]
+    RUN --push --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli deploy --dir=site --prod
+  ELSE
+    RUN --push --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli deploy --dir=site
+  END

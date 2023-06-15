@@ -1,0 +1,19 @@
+#Check Type: Movement.
+#Check Name: NoFallA.
+
+NoFallA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+NoFallA_advanced:
+  #Amount of blocks to give leniency for
+  LeniencyInBlocks: 1.1

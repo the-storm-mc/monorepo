@@ -1,0 +1,44 @@
+#Placeholders: %PLAYER% is the name of the hacker, %PLAYERUUID% is the UUID of the player, %HACKNAME% is the likely name of the hack.
+#%CHECKNAME% is the check that detected the player for hacking (this can sometimes be the same as HACKNAME but can be different too).
+
+#Welcome to AntiAura's configuration!
+
+# AntiAura executes commands if it detects someone hacking.
+# Violations are usually reset when a player leaves or rejoins the server.
+# You can use @@ to execute multiple commands, for example: kick %PLAYER% Hacking@@broadcast %PLAYER% has been kicked for hacking!
+  # Command to execute after an amount of violations.
+Violations:
+  1: "aamodnotify &7[&3AntiAura&7][&3%CHECKNAME%&7]: Player &3%PLAYER% &7has a &alow &7chance of using &3%HACKNAME%"
+  2: "aamodnotify &7[&3AntiAura&7][&3%CHECKNAME%&7]: Player &3%PLAYER% &7has a &5moderate &7chance of using &3%HACKNAME%"
+  3: "aacapturereplay@@aakick %PLAYER% You were kicked for failing %CHECKNAME%@@aamodnotify &7[&3AntiAura&7][&3%CHECKNAME%&7]: &cPlayer &3%PLAYER% &chas been kicked for using &3%HACKNAME%@@aamodnotify &7[&3AntiAura&7]: &7Use &3/areplay %PLAYER% &7to see why %PLAYER% was kicked"
+  4: "aaresetviolations"
+
+#Experimental feature. Optimises AntiAura to use less CPU.
+#EntityHidingA must be enabled for technical reasons.
+OptimisePerformance: false
+
+#Disable all movement dragbacks, cancelled hits and un-placed blocks?
+DisableDragbacks: false
+
+#You will need the BungeeCord ADDON of AntiAura for this to take effect.
+#Bungee addon download: https://www.spigotmc.org/resources/AntiAura.1368/update?update=4609
+BungeeCord:
+  #EXECUTE if you wish to execute the command on the BungeeCord server.
+  #FORWARD if you wish to forward the command to be executed by all spigot servers in the network.
+  #BOTH if you wish commands to execute on BungeeCord AND be forwarded to the other bukkit servers!
+  ForwardOrExecute: EXECUTE
+
+Geyser:
+  #Bedrock players don't need a prefix if Floodgate is on the Spigot server.
+  #If a player's name starts with the value of BedrockPrefix, treat this player as a Bedrock client.
+  BedrockPrefix: '*'
+
+#Relating to replays (/areplay command)
+Replays:
+  #Requires the Player NPC plugin: https://www.spigotmc.org/resources/✅-api-player-npc-✅-1-17-1-19-2.93625/
+  #If Player NPC is not installed, defaults ot a zombie.
+  UseFakePlayerNPCs: true
+  #Teleport back to original location after replay finishes?
+  TeleportBackAfterReplay: true
+
+#To configure individual checks (e.g. SpeedA, FlightB), please look at the "checks" folder!

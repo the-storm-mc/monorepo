@@ -1,0 +1,7 @@
+VERSION 0.7
+FROM ubuntu:jammy
+WORKDIR /workspace
+
+build:
+  COPY . .
+  SAVE ARTIFACT ./* AS LOCAL out

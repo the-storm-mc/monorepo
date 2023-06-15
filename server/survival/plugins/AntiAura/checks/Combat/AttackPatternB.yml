@@ -1,0 +1,20 @@
+#Check Type: Combat.
+#Check Name: AttackPatternB.
+
+AttackPatternB:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 1.4
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+AttackPatternB_advanced:
+  #How certain must the Machine Learning model be to believe killaura is being used?
+  #Defaults to 0.8, which is 80%.
+  CertaintyPercentage: 0.8

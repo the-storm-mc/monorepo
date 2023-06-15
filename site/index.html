@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg">
+
+    <!-- HTML Meta Tags -->
+    <title>The Storm</title>
+    <meta name="description" content="The Storm - Polished Minecraft Survival">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://ts-mc.net">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Storm">
+    <meta property="og:description" content="The Storm - Polished Minecraft Survival">
+    <meta property="og:image" content="https://ts-mc.net/social.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="ts-mc.net">
+    <meta property="twitter:url" content="https://ts-mc.net">
+    <meta name="twitter:title" content="The Storm">
+    <meta name="twitter:description" content="The Storm - Polished Minecraft Survival">
+    <meta name="twitter:image" content="https://ts-mc.net/social.png">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundImage: {
+                        'bg': "url('bg.jpg')"
+                    },
+                    colors: {
+                        'gray': 'rgb(48, 48, 48)',
+                        'light-gray': 'rgb(53, 53, 53)',
+                        'teal': 'rgb(78, 205, 197)',
+                        'white': 'rgb(255, 255, 255)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="overflow-hidden">
+    <div class="min-h-screen w-screen bg-bg bg-fixed bg-cover">
+        <div class="flex flex-col h-screen justify-evenly">
+            <div class="flex flex-col items-center">
+                <img src="logo.svg" class="w-screen md:w-2/4" />
+                <div class="flex flex-col md:flex-row">
+                    <a class="transition-all duration-300 rounded-lg m-6 md:m-10 p-6 md:p-12 bg-gray hover:bg-light-gray text-center hover:underline text-2xl md:text-4xl no-underline text-teal"
+                        href="https://docs.ts-mc.net">Docs</a>
+                    <a class="transition-all duration-300 rounded-lg m-6 md:m-10 p-6 md:p-12 bg-gray hover:bg-light-gray text-center hover:underline text-2xl md:text-4xl no-underline text-teal"
+                        href="https://livemap.ts-mc.net">LiveMap</a>
+                    <a class="transition-all duration-300 rounded-lg m-6 md:m-10 p-6 md:p-12 bg-gray hover:bg-light-gray text-center hover:underline text-2xl md:text-4xl no-underline text-teal"
+                        href="https://discord.gg/TvTCcWnYUT">Discord</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

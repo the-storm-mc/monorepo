@@ -1,0 +1,47 @@
+cfg-version: 12
+message: "&cYou have reached the edge of this world."
+round-border: false
+debug-mode: false
+whoosh-effect: true
+portal-redirection: true
+knock-back-dist: 7.0
+timer-delay-ticks: 5
+remount-delay-ticks: 0
+dynmap-border-enabled: true
+dynmap-border-layer-label: Border
+dynmap-border-message: The edge of the world
+dynmap-border-hideByDefault: false
+dynmap-border-priority: 0
+player-killed-bad-spawn: false
+deny-enderpearl: true
+fill-autosave-frequency: 30
+bypass-list-uuids: []
+fill-memory-tolerance: 500
+prevent-block-place: false
+prevent-mob-spawn: false
+no-players-toggle: false
+worlds:
+  world:
+    x: 0.0
+    z: 0.0
+    radiusX: 15000
+    radiusZ: 15000
+    wrapping: false
+  world_amplified:
+    x: 0.0
+    z: 0.0
+    radiusX: 5000
+    radiusZ: 5000
+    wrapping: false
+  world_nether:
+    x: 0.0
+    z: 0.0
+    radiusX: 3000
+    radiusZ: 3000
+    wrapping: false
+  world_the_end:
+    x: 0.0
+    z: 0.0
+    radiusX: 500
+    radiusZ: 500
+    wrapping: false

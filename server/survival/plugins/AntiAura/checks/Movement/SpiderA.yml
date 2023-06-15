@@ -1,0 +1,19 @@
+#Check Type: Movement.
+#Check Name: SpiderA.
+
+SpiderA:
+  #Enable this check?
+  Enabled: true
+  #Violation Level to detect player for hacking.
+  Threshold: 10
+
+
+
+
+#  --->      Advanced Configuration      <---
+
+#Please read all comments VERY CAREFULLY before making changes.
+
+SpiderA_advanced:
+  #Max height to be off ground.
+  MaxHeightOffGround: 2.0
