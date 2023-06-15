@@ -1,0 +1,26 @@
+---
+services:
+  minecraft_survival_beta:
+    container_name: minecraft_survival_beta
+    image: ghcr.io/shepherdjerred-minecraft/paper:1.20
+    tty: true
+    stdin_open: true
+    volumes:
+      - /home/ubuntu/servers/survival/beta:/home/minecraft/server:z
+    ports:
+      - 25575:25565/tcp
+      - 25575:25565/udp
+    command: -Xmx2G -jar "../paper.jar"
+    restart: unless-stopped
+  minecraft_creative_beta:
+    container_name: minecraft_creative_beta
+    image: ghcr.io/shepherdjerred-minecraft/paper:1.20
+    tty: true
+    stdin_open: true
+    volumes:
+      - /home/ubuntu/servers/creative/beta:/home/minecraft/server:z
+    ports:
+      - 25576:25565/tcp
+      - 25576:25565/udp
+    command: -Xmx1G -jar "../paper.jar"
+    restart: unless-stopped

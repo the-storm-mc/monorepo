@@ -13,9 +13,9 @@ deploy:
   ENV NETLIFY_SITE_ID=14a2a1e2-c359-4bb0-bbf2-f230d8615c2c
   RUN npm i -g netlify-cli
   COPY +build/ site
-  RUN --push --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli link
+  RUN --push --no-cache --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli link
   IF [ $prod = "true" ]
-    RUN --push --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli deploy --dir=site --prod
+    RUN --push --no-cache --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli deploy --dir=site --prod
   ELSE
-    RUN --push --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli deploy --dir=site
+    RUN --push --no-cache --secret NETLIFY_AUTH_TOKEN=netlify_token npx netlify-cli deploy --dir=site
   END
