@@ -12,7 +12,7 @@
 
 settings:
   debug: false
-  sample-count: 12
+  sample-count: 20
   bungeecord: false
   player-shuffle: 0
   user-cache-size: 1000
@@ -41,12 +41,12 @@ messages:
   restart: Server is restarting
 commands:
   replace-commands:
-  - setblock
-  - summon
-  - testforblock
-  - tellraw
+    - setblock
+    - summon
+    - testforblock
+    - tellraw
   spam-exclusions:
-  - /skill
+    - /skill
   silent-commandblock-console: false
   log: true
   tab-complete: 0
@@ -56,18 +56,18 @@ world-settings:
     below-zero-generation-in-existing-chunks: true
     verbose: true
     entity-activation-range:
-      animals: 32
-      monsters: 32
-      raiders: 48
-      misc: 16
+      animals: 64
+      monsters: 64
+      raiders: 128
+      misc: 64
       tick-inactive-villagers: true
       ignore-spectators: false
     entity-tracking-range:
-      players: 48
-      animals: 48
-      monsters: 48
-      misc: 32
-      other: 64
+      players: 64
+      animals: 64
+      monsters: 128
+      misc: 64
+      other: 128
     ticks-per:
       hopper-transfer: 8
       hopper-check: 1
@@ -110,25 +110,25 @@ world-settings:
       weepingvines-modifier: 100
       cavevines-modifier: 100
     merge-radius:
-      exp: 3.0
-      item: 2.5
-    mob-spawn-range: 6
+      exp: 1.5
+      item: 0.5
+    mob-spawn-range: 8
     hunger:
-      jump-walk-exhaustion: 0.05
-      jump-sprint-exhaustion: 0.2
-      combat-exhaustion: 0.1
-      regen-exhaustion: 6.0
-      swim-multiplier: 0.01
-      sprint-multiplier: 0.1
+      jump-walk-exhaustion: 0.075
+      jump-sprint-exhaustion: 0.3
+      combat-exhaustion: 0.2
+      regen-exhaustion: 5.0
+      swim-multiplier: 0.04
+      sprint-multiplier: 0.2
       other-multiplier: 0.0
     max-tnt-per-tick: 100
     max-tick-time:
       tile: 50
       entity: 50
-    item-despawn-rate: 6000
-    view-distance: default
-    simulation-distance: default
-    thunder-chance: 100000
+    item-despawn-rate: 18000
+    view-distance: 15
+    simulation-distance: 15
+    thunder-chance: 10000
     enable-zombie-pigmen-portal-spawns: true
     wither-spawn-sound-radius: 0
     hanging-tick-frequency: 100
@@ -142,7 +142,7 @@ world-settings:
 advancements:
   disable-saving: false
   disabled:
-  - minecraft:story/disabled
+    - minecraft:story/disabled
 players:
   disable-saving: false
 config-version: 12
