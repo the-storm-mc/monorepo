@@ -33,15 +33,15 @@ ban-templates:
     ladder:
       # In this ladder, the first offense results in a five-year ban, and the second offense results in a permanent ban.
       final:
-        reason: '#FF0000Created pineapple pizza! - Final Punishment'
+        reason: "#FF0000Created pineapple pizza! - Final Punishment"
         duration: permanent
       first:
-        reason: '#FF0000Created pineapple pizza! - First Offense'
+        reason: "#FF0000Created pineapple pizza! - First Offense"
         duration: 5 years
   # This is another example template.
   # Usage: /ban <player> Rule985
   Rule985:
-    reason: 'Rule #985'
+    reason: "Rule #985"
     message: |-
       &cYou are banned from the Finecrafting-Minecrafting Network!
       #FF0000You have been banned for breaking rule #985.
@@ -61,18 +61,18 @@ ban-templates:
 mute-templates: {}
 warn-templates:
   CustomWarning:
-    reason: 'Custom client'
+    reason: "Custom client"
     message: |-
       &eYou have been warned for customizing your client.
       &cPlease revert all of your settings to default within 5 minutes or you will be banned.
     ladder:
       second:
-        reason: 'Custom client - Second Warning'
+        reason: "Custom client - Second Warning"
         actions:
           - /ban $playerName 5d Custom client
       first: {}
 
 kick-templates:
   Speeding:
-    reason: 'Running too fast'
-    message: 'You ran too fast! Please slow down a bit and try again.'
+    reason: "Running too fast"
+    message: "You ran too fast! Please slow down a bit and try again."

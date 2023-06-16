@@ -8,12 +8,12 @@ This repository contains documentation for The Storm.
 
 You'll need to install the following software:
 
--   [Earthly](https://earthly.dev/)
--   [Docker](https://www.docker.com/)
+- [Earthly](https://earthly.dev/)
+- [Docker](https://www.docker.com/)
 
 You'll need some secrets set with Earthly secrets:
 
--   `sj/mkdocs_gh_token`: A GitHub token that has permission to pull [squidfunk/mkdocs-material-insiders](https://github.com/squidfunk/mkdocs-material-insiders)
+- `sj/mkdocs_gh_token`: A GitHub token that has permission to pull [squidfunk/mkdocs-material-insiders](https://github.com/squidfunk/mkdocs-material-insiders)
 
 ## Usage
 

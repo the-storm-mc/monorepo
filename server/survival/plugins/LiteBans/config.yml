@@ -24,10 +24,10 @@ sync_dupeip_notifications: false
 # If you need per-server bans, you have to change server_name on all instances.
 # The "$serverScope" and "$serverOrigin" variables can be used in messages.
 # Maximum length is 32 characters.
-server_name: 'litebans'
+server_name: "litebans"
 
 # This option decides which server(s) will be affected in commands by default.
-default_server_scope: '*'
+default_server_scope: "*"
 
 sql:
   # H2, MySQL, MariaDB, and PostgreSQL are supported database drivers.
@@ -41,9 +41,9 @@ sql:
   address: localhost:3306
 
   # Database name, username and password.
-  database: 'litebans'
-  username: ''
-  password: ''
+  database: "litebans"
+  username: ""
+  password: ""
 
   # LiteBans utilizes connection pooling for extra performance and reliability.
   # min_connections: Minimum amount of pooled connections.
@@ -64,19 +64,19 @@ sql:
   # Database engine. Only applies to MySQL & MariaDB.
   engine: InnoDB
 
-  options: 'useSSL=false&serverTimezone=UTC'
+  options: "useSSL=false&serverTimezone=UTC"
 
-  table_prefix: 'litebans_'
+  table_prefix: "litebans_"
 
   # Format: <name>:<class>[:URL:version]
   # SQLite is only included here for importing purposes, use H2 instead.
   drivers:
-  - version:6
-  - 'mysql:com.mysql.cj.jdbc.Driver:https://repo1.maven.org/maven2/mysql/mysql-connector-java/{}/mysql-connector-java-{}.jar:8.0.29'
-  - 'pgsql:org.postgresql.Driver:https://repo1.maven.org/maven2/org/postgresql/postgresql/{}/postgresql-{}.jar:42.4.0'
-  - 'mariadb:org.mariadb.jdbc.Driver:https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/{}/mariadb-java-client-{}.jar:3.0.7'
-  - 'sqlite:org.sqlite.JDBC:https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/{}/sqlite-jdbc-{}.jar:3.8.11.1'
-  - 'h2:org.h2.Driver:https://repo1.maven.org/maven2/com/h2database/h2/{}/h2-{}.jar:1.4.197'
+    - version:6
+    - "mysql:com.mysql.cj.jdbc.Driver:https://repo1.maven.org/maven2/mysql/mysql-connector-java/{}/mysql-connector-java-{}.jar:8.0.29"
+    - "pgsql:org.postgresql.Driver:https://repo1.maven.org/maven2/org/postgresql/postgresql/{}/postgresql-{}.jar:42.4.0"
+    - "mariadb:org.mariadb.jdbc.Driver:https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/{}/mariadb-java-client-{}.jar:3.0.7"
+    - "sqlite:org.sqlite.JDBC:https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/{}/sqlite-jdbc-{}.jar:3.8.11.1"
+    - "h2:org.h2.Driver:https://repo1.maven.org/maven2/com/h2database/h2/{}/h2-{}.jar:1.4.197"
 
 durations:
   # The highest limit matched by permissions will be used for duration limits.
@@ -113,27 +113,27 @@ mutes:
   enabled: true
   # All of these commands can not be used while muted.
   command_blacklist:
-  - /me
-  - /say
-  - /tell
-  - /whisper
-  - /reply
-  - /pm
-  - /message
-  - /msg
-  - /emsg
-  - /epm
-  - /etell
-  - /ewhisper
-  - /w
-  - /m
-  - /t
-  - /r
-  - /mail send
+    - /me
+    - /say
+    - /tell
+    - /whisper
+    - /reply
+    - /pm
+    - /message
+    - /msg
+    - /emsg
+    - /epm
+    - /etell
+    - /ewhisper
+    - /w
+    - /m
+    - /t
+    - /r
+    - /mail send
   # This command blacklist specifically applies to players who are affected by /mutechat.
   mutechat_command_blacklist:
-  - /me
-  - /say
+    - /me
+    - /say
   # If enabled, muted players cannot use blacklisted commands containing ":", for example: "/minecraft:me".
   # This does not prevent muted players from using non-blacklisted commands with ":".
   prevent_bypass: true
@@ -148,8 +148,8 @@ warnings:
   # If '+' is provided after the threshold, the action will execute if the player has that amount of warnings or more.
   # If you want a punishment action to inherit the silent status from the warning that caused it, add the flag "-s:$silent" to the action.
   actions:
-  - '3:/kick -s:$silent $player Final warning: $reason'
-  - '4:/tempban -s:$silent $player 1 day Reached 4 warnings: $list'
+    - "3:/kick -s:$silent $player Final warning: $reason"
+    - "4:/tempban -s:$silent $player 1 day Reached 4 warnings: $list"
   # If enabled, the console will execute warning actions.
   # Otherwise, the player who executes the last warning also executes the warning action.
   actions_execute_as_console: false
@@ -211,11 +211,11 @@ geoip:
     # https://gitlab.com/ruany/LiteBans/-/wikis/GeoIP
     db: https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=YOUR_LICENSE_KEY&suffix=tar.gz
     api:
-    - https://repo1.maven.org/maven2/com/maxmind/geoip2/geoip2/2.1.0/geoip2-2.1.0.jar
-    - https://repo1.maven.org/maven2/com/maxmind/db/maxmind-db/1.0.0/maxmind-db-1.0.0.jar
-    - https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.3/jackson-core-2.4.3.jar
-    - https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.3/jackson-annotations-2.4.3.jar
-    - https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.3/jackson-databind-2.4.3.jar
+      - https://repo1.maven.org/maven2/com/maxmind/geoip2/geoip2/2.1.0/geoip2-2.1.0.jar
+      - https://repo1.maven.org/maven2/com/maxmind/db/maxmind-db/1.0.0/maxmind-db-1.0.0.jar
+      - https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.3/jackson-core-2.4.3.jar
+      - https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.3/jackson-annotations-2.4.3.jar
+      - https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.3/jackson-databind-2.4.3.jar
 
 security:
   # If enabled, only the console can see IP addresses in /dupeip output.
@@ -260,8 +260,8 @@ unban_all_history: false
 # If a kick message contains any of these, it will not be added to the database.
 # You can set this list to [''] if you don't want any kicks to be added to the database.
 ignored_kick_messages:
-- restarting
-- afk
+  - restarting
+  - afk
 
 # This option controls how often notifications are sent from a single player.
 # When a player tries to join when banned or talk while muted,
@@ -300,8 +300,8 @@ import:
   ## MySQL import settings ##
   import_mysql_address: localhost:3306
   import_mysql_database: maxbans
-  import_mysql_username: ''
-  import_mysql_password: ''
+  import_mysql_username: ""
+  import_mysql_password: ""
 
 ##############################
 ###### Advanced settings #####

@@ -41,12 +41,12 @@ messages:
   restart: Server is restarting
 commands:
   replace-commands:
-  - setblock
-  - summon
-  - testforblock
-  - tellraw
+    - setblock
+    - summon
+    - testforblock
+    - tellraw
   spam-exclusions:
-  - /skill
+    - /skill
   silent-commandblock-console: false
   log: true
   tab-complete: 0
@@ -142,7 +142,7 @@ world-settings:
 advancements:
   disable-saving: false
   disabled:
-  - minecraft:story/disabled
+    - minecraft:story/disabled
 players:
   disable-saving: false
 config-version: 12

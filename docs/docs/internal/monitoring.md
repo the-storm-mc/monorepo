@@ -1,7 +1,6 @@
 # Monitoring
 
-A public dashboard showing detailed [here](https://p.datadoghq.com/sb/a75dfe26-225b-11ed-b34a-da7ad0900002-db9d77ad26203770040b0c64f56cace3
-).
+A public dashboard showing detailed [here](https://p.datadoghq.com/sb/a75dfe26-225b-11ed-b34a-da7ad0900002-db9d77ad26203770040b0c64f56cace3).
 
 The server is monitored with [Datadog](https://www.datadoghq.com/). Alarms exist to ensure the following:
 
