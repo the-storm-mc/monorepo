@@ -19,6 +19,8 @@ build:
   IF [ $stage = "infra" ]
     COPY +render.compose/ .
     COPY config config/
+    RUN --secret=BORGBASE_KEY=borgbase_key echo "$BORGBASE_KEY" | base64 -d > config/borg/key && chmod 600 config/borg/key
+    RUN --secret=BORGBASE_APPEND_KEY=borgbase_key_append_only echo "$BORGBASE_APPEND_KEY" | base64 -d > config/borg/key_append_only && chmod 600 config/borg/key_append_only
   ELSE IF [ $stage = "beta" ]
     COPY compose.beta.yml .
     COPY ./survival+build/ servers/survival/$stage
@@ -64,7 +66,7 @@ up:
 clear-plugins:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "rm servers/*/$stage/plugins/*.jar"
+  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "rm -v servers/*/$stage/plugins/*.jar"
 
 deploy:
   ARG --required stage

@@ -61,6 +61,12 @@ services:
       - ./docs:/docs:ro,Z
       - ./config/caddy/Caddyfile:/etc/caddy/Caddyfile:ro,Z
     restart: unless-stopped
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:z
 volumes:
   caddy-config:
   caddy-data:

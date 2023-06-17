@@ -1,12 +1,6 @@
 VERSION 0.7
 PROJECT sjerred/monorepo
 
-pipeline.pr:
-  PIPELINE
-  TRIGGER pr main
-  BUILD ./docs+deploy
-  BUILD ./site+deploy
-
 pipeline.push:
   PIPELINE --push
   TRIGGER push main
