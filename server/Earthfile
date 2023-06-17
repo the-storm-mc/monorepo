@@ -43,7 +43,7 @@ rsync:
 down:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "cd /home/ubuntu && docker compose -f compose.$stage.yml down"
+  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "docker compose -f compose.$stage.yml down"
 
 sync:
   FROM +rsync
@@ -54,9 +54,34 @@ sync:
 pull:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "cd /home/ubuntu && docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build"
+  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build"
 
 up:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "cd /home/ubuntu && docker compose -f compose.$stage.yml up -d"
+  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "docker compose -f compose.$stage.yml up -d"
+
+clear-plugins:
+  FROM +rsync
+  ARG --required stage
+  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "rm servers/*/$stage/plugins/*.jar"
+
+deploy:
+  ARG --required stage
+  WAIT
+    BUILD +down --stage=$stage
+  END
+  IF [ $stage != "infra" ]
+    WAIT
+      BUILD +clear-plugins --stage=$stage
+    END
+  END
+  WAIT
+    BUILD +sync --stage=$stage
+  END
+  WAIT
+    BUILD +pull --stage=$stage
+  END
+  WAIT
+    BUILD +up --stage=$stage
+  END

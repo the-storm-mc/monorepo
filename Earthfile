@@ -10,35 +10,20 @@ pipeline.pr:
 pipeline.push:
   PIPELINE --push
   TRIGGER push main
-  BUILD +web
-  # BUILD +servers
+  BUILD +deploy.web
+  BUILD +deploy.servers
 
-web:
+deploy.web:
   BUILD ./docs+deploy --prod=true
   BUILD ./site+deploy --prod=true
 
-server.update:
-  ARG --required stage
+deploy.servers:
+  BUILD ./server+deploy --stage=infra
   WAIT
-    BUILD ./server+down --stage=$stage
+    BUILD ./server+deploy --stage=beta
   END
   WAIT
-    BUILD ./server+sync --stage=$stage
-  END
-  WAIT
-    BUILD ./server+pull --stage=$stage
-  END
-  WAIT
-    BUILD ./server+up --stage=$stage
-  END
-
-servers:
-  BUILD +server.update --stage=infra
-  WAIT
-    BUILD +server.update --stage=beta
-  END
-  WAIT
-    BUILD +server.update --stage=prod
+    BUILD ./server+deploy --stage=prod
   END
 
 git:
