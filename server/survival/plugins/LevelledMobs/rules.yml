@@ -42,7 +42,6 @@ mob-groups:
     - SHEEP
     - PIG
 
-
 biome-groups:
   cold_biomes:
     - SNOWY_BEACH
@@ -71,7 +70,7 @@ biome-groups:
 presets:
   spawn_Levelling:
     # This Strategy Preset controls the Spawn-Distance-Levelling system.
-    name: 'LVLling Strategy - Distance-From-Spawn'
+    name: "LVLling Strategy - Distance-From-Spawn"
     strategies:
       distance-from-spawn:
         increase-level-distance: 150
@@ -82,7 +81,7 @@ presets:
 
   lvl-mod_spawn-blended:
     # This Strategy Preset controls the Blended addon to Spawn-Distance-Levelling, adding a Y-coordinate component to the system.
-    name: 'LVLling Modifier - Blended Addon to Spawn Distance Levelling'
+    name: "LVLling Modifier - Blended Addon to Spawn Distance Levelling"
     strategies:
       distance-from-spawn:
         blended-levelling:
@@ -94,19 +93,19 @@ presets:
 
   random_Levelling:
     # This Strategy Preset controls the Random-Levelling system.
-    name: 'LVLling Strategy - Random'
+    name: "LVLling Strategy - Random"
     strategies:
       random: true
 
   weighted_random_Levelling:
     # This Strategy Preset controls Weighted Random Bias.
-    name: 'LVLling Strategy - Weighted Random'
+    name: "LVLling Strategy - Weighted Random"
     strategies:
       weighted-random: true
 
   lvl-mod_player-variable:
     # This Strategy Preset controls the player-variable based level modification system.
-    name: 'LVLling Modifier - Player Variable AVERAGE CHALLENGE'
+    name: "LVLling Modifier - Player Variable AVERAGE CHALLENGE"
     strategies:
       player-levelling:
         match-level: true
@@ -120,17 +119,17 @@ presets:
           1-15: 1-10
           16-30: 11-20
           31-45: 21-25
-        variable: '%level%'
+        variable: "%level%"
 
   lvl-mod_apply-variance:
     # This Strategy Preset controls the application of a random level variance to level previously applied.
-    name: 'LVLling Modifier - Apply Variance'
+    name: "LVLling Modifier - Apply Variance"
     strategies:
       max-random-variance: 2
 
   ycoord_Levelling:
     # This Strategy Preset controls Y-Coordinate-Levelling.
-    name: 'LVLling Strategy - Y-LVLling'
+    name: "LVLling Strategy - Y-LVLling"
     strategies:
       y-coordinate:
         start: 100
@@ -139,14 +138,14 @@ presets:
 
   allowed_worlds:
     # This controls the allowed worlds to apply levels too.
-    name: 'Excluded Worldlist'
+    name: "Excluded Worldlist"
     conditions:
       worlds:
         # allowed-list: ['*']
-        excluded-list: [ 'world_the_end' ]
+        excluded-list: ["world_the_end"]
 
   basic_challenge:
-    name: 'Basic-Challenge Multipliers'
+    name: "Basic-Challenge Multipliers"
     apply-settings:
       minLevel: 1
       maxLevel: 10
@@ -158,19 +157,19 @@ presets:
         xp-drop: 5.0
 
       tiered-coloring:
-        1-2: '&#22E76B' #Green
-        3-4: '&#528CFF' #Blue
-        5-6: '&#FFCD56' #Yellow
-        7-8: '&#F2003D' #Red
-        9-10: '&#B447FF' #Purple
-        default: '&#FFFFFF' #White
+        1-2: "&#22E76B" #Green
+        3-4: "&#528CFF" #Blue
+        5-6: "&#FFCD56" #Yellow
+        7-8: "&#F2003D" #Red
+        9-10: "&#B447FF" #Purple
+        default: "&#FFFFFF" #White
       health-indicator:
         scale: 2
         max: 5
         merge: true
 
   average_challenge:
-    name: 'Average-Challenge Multipliers'
+    name: "Average-Challenge Multipliers"
     apply-settings:
       minLevel: 1
       maxLevel: 25
@@ -195,19 +194,19 @@ presets:
         # xp-drop: [ '17.5', 'STACKED' ]
 
       tiered-coloring:
-        1-5: '&#22E76B' #Green
-        6-10: '&#528CFF' #Blue
-        11-15: '&#FFCD56' #Yellow
-        16-20: '&#F2003D' #Red
-        21-25: '&#B447FF' #Purple
-        default: '&#FFFFFF' #White
+        1-5: "&#22E76B" #Green
+        6-10: "&#528CFF" #Blue
+        11-15: "&#FFCD56" #Yellow
+        16-20: "&#F2003D" #Red
+        21-25: "&#B447FF" #Purple
+        default: "&#FFFFFF" #White
       health-indicator:
         scale: 4
         max: 5
         merge: true
 
   advanced_challenge:
-    name: 'Advanced-Challenge Multipliers'
+    name: "Advanced-Challenge Multipliers"
     apply-settings:
       minLevel: 1
       maxLevel: 50
@@ -227,19 +226,19 @@ presets:
         knockback-resistance: 0.5
 
       tiered-coloring:
-        1-9: '&#22E76B' #Green
-        10-19: '&#528CFF' #Blue
-        20-29: '&#FFCD56' #Yellow
-        30-39: '&#F2003D' #Red
-        40-50: '&#B447FF' #Purple
-        default: '&#FFFFFF' #White
+        1-9: "&#22E76B" #Green
+        10-19: "&#528CFF" #Blue
+        20-29: "&#FFCD56" #Yellow
+        30-39: "&#F2003D" #Red
+        40-50: "&#B447FF" #Purple
+        default: "&#FFFFFF" #White
       health-indicator:
         scale: 8
         max: 5
         merge: true
 
   extreme_challenge:
-    name: 'Extreme-Challenge Multipliers'
+    name: "Extreme-Challenge Multipliers"
     apply-settings:
       minLevel: 1
       maxLevel: 100
@@ -260,12 +259,12 @@ presets:
         zombie-spawn-reinforcements: 0.15
 
       tiered-coloring:
-        1-19: '&#22E76B' #Green
-        20-39: '&#528CFF' #Blue
-        40-59: '&#FFCD56' #Yellow
-        60-79: '&#F2003D' #Red
-        80-100: '&#B447FF' #Purple
-        default: '&#FFFFFF' #White
+        1-19: "&#22E76B" #Green
+        20-39: "&#528CFF" #Blue
+        40-59: "&#FFCD56" #Yellow
+        60-79: "&#F2003D" #Red
+        80-100: "&#B447FF" #Purple
+        default: "&#FFFFFF" #White
       health-indicator:
         scale: 16
         max: 5
@@ -273,28 +272,27 @@ presets:
 
   nametag_using_indicator:
     #   This controls the nametag, where the health is displayed using %health-indicator%
-    name: 'Nametag - Health Indicator'
+    name: "Nametag - Health Indicator"
     apply-settings:
-      nametag: '&8&l༺ %tiered%Lvl %mob-lvl%&8 | &f%displayname%&8 | &f%entity-health-rounded% %tiered%%heart_symbol% &r%health-indicator% &8&l༻'
+      nametag: "&8&l༺ %tiered%Lvl %mob-lvl%&8 | &f%displayname%&8 | &f%entity-health-rounded% %tiered%%heart_symbol% &r%health-indicator% &8&l༻"
       health-indicator:
-        indicator: '█'
-        indicator-half: '▌'
+        indicator: "█"
+        indicator-half: "▌"
         colored-tiers:
-          tier-1: '&#22E76B' #Green
-          tier-2: '&#528CFF' #Blue
-          tier-3: '&#FFCD56' #Yellow
-          tier-4: '&#FE803C' #Orange
-          tier-5: '&#F2003D' #Red
-          tier-6: '&#B447FF' #Purple
-          default: '&#FFFFFF' #White
+          tier-1: "&#22E76B" #Green
+          tier-2: "&#528CFF" #Blue
+          tier-3: "&#FFCD56" #Yellow
+          tier-4: "&#FE803C" #Orange
+          tier-5: "&#F2003D" #Red
+          tier-6: "&#B447FF" #Purple
+          default: "&#FFFFFF" #White
         merge: true
 
   nametag_using_numbers:
     #   This controls the nametag, where the health is displayed using %entity-health-rounded%
-    name: 'Nametag - Health Numerical'
+    name: "Nametag - Health Numerical"
     apply-settings:
-      nametag: '&8&l༺ %tiered%Lvl %mob-lvl%&8 | &f%displayname%&8 | &f%entity-health-rounded%&8/&f%entity-max-health-rounded% %tiered%%heart_symbol% &8&l༻'
-
+      nametag: "%tiered%Level %mob-lvl | %entity-health-rounded% %tiered%%heart_symbol%"
 
 # +-------------------------------------------------------------------------------------------LM3
 # +                                                                                          +LM3
@@ -327,7 +325,7 @@ default-rule:
 
   conditions:
     allowed-spawn-reasons:
-      excluded-list: [ 'SPAWNER' ]
+      excluded-list: ["SPAWNER"]
 
     level-plugins:
       DANGEROUS_CAVES: false
@@ -354,7 +352,7 @@ default-rule:
   apply-settings:
     multipliers:
       vanilla-bonus:
-        excluded-list: ['LEADER_ZOMBIE_BONUS', 'RANDOM_SPAWN_BONUS']
+        excluded-list: ["LEADER_ZOMBIE_BONUS", "RANDOM_SPAWN_BONUS"]
 
     sunlight-intensity: 5
     creeper-max-damage-radius: 3
@@ -364,14 +362,14 @@ default-rule:
       #SKELETON: ['Bones', 'Billy Bones', 'Verta Brae']
       #PILLAGER: ['Raider', 'Barbarian']
 
-    creature-death-nametag: '%tiered%Lvl %mob-lvl%&8 | &f%displayname%'
+    creature-death-nametag: "%tiered%Lvl %mob-lvl%&8 | &f%displayname%"
     death-messages:
     #  3: ['%player% was killed by a %death_nametag%!']
     #  1: ['A level %mob-lvl% %displayname% slaughtered %player%!']
-    nametag-placeholder-levelled: ''
-    nametag-placeholder-unlevelled: ''
+    nametag-placeholder-levelled: ""
+    nametag-placeholder-unlevelled: ""
     nametag-visible-time: 1s
-    nametag-visibility-method: [ 'TARGETED', 'ATTACKED', 'TRACKING' ]
+    nametag-visibility-method: ["TARGETED", "ATTACKED", "TRACKING"]
 
     baby-mobs-inherit-adult-setting: true
     level-inheritance: true
@@ -384,7 +382,7 @@ default-rule:
     chunk-max-cooldown-seconds: 300s
     disable-vanilla-drops-on-chunk-max: false
 
-    spawner-particles: 'SOUL'
+    spawner-particles: "SOUL"
     spawner-particles-count: 10
 
 # +-------------------------------------------------------------------------------------------LM3
@@ -401,19 +399,31 @@ default-rule:
 # +-------------------------------------------------------------------------------------------LM3
 custom-rules:
   - enabled: true
-    name: 'CR - NoLevel All Passive + EntityTypes'
+    name: "CR - NoLevel All Passive + EntityTypes"
     use-preset: allowed_worlds
     conditions:
       entities:
-        allowed-groups: [ 'all_passive_mobs' ]
-        allowed-list: [ 'BABY_', 'ENDER_DRAGON', 'WITHER', 'VILLAGER', 'ZOMBIE_VILLAGER', 'WANDERING_TRADER', 'PHANTOM', 'BAT', 'RAVAGER', 'WARDEN' ]
+        allowed-groups: ["all_passive_mobs"]
+        allowed-list:
+          [
+            "BABY_",
+            "ENDER_DRAGON",
+            "WITHER",
+            "VILLAGER",
+            "ZOMBIE_VILLAGER",
+            "WANDERING_TRADER",
+            "PHANTOM",
+            "BAT",
+            "RAVAGER",
+            "WARDEN",
+          ]
     apply-settings:
       maxLevel: 0
 
   - enabled: true
-    name: 'CR - Custom Nether Levelling'
+    name: "CR - Custom Nether Levelling"
     conditions:
-      worlds: 'world_nether'
+      worlds: "world_nether"
     strategies:
       y-coordinate:
         start: 100
@@ -421,7 +431,7 @@ custom-rules:
         period: 0
 
   - enabled: true
-    name: 'CR - Custom Entity Attributes'
+    name: "CR - Custom Entity Attributes"
     use-preset: allowed_worlds
     apply-settings:
       multipliers:
@@ -438,10 +448,10 @@ custom-rules:
             max-health: 1.0
 
   - enabled: true
-    name: 'CR - Custom Zombie Piglin Levelling'
+    name: "CR - Custom Zombie Piglin Levelling"
     conditions:
-      worlds: 'world_nether'
-      entities: 'ZOMBIFIED_PIGLIN'
+      worlds: "world_nether"
+      entities: "ZOMBIFIED_PIGLIN"
     strategies:
       random: true
     apply-settings:
@@ -455,8 +465,7 @@ custom-rules:
         item-drop: 0.5
         xp-drop: 1.0
       tiered-coloring:
-        1-5: '&#22E76B' #Green
-
+        1-5: "&#22E76B" #Green
 
 # +-------------------------------------------------------------------------------------------LM3
 # +                                                                                          +LM3

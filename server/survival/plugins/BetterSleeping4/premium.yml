@@ -11,7 +11,7 @@
 # This configuration file is for premium users only, enjoy being a VIP :-)
 
 # Sets the prefix of all BetterSleeping4 messages
-prefix: "&7[&3Sleep&7]: &7"
+prefix: "&8[&3Sleep&8]: &7"
 
 # Whether to make sure time is set to day when a player joins a world with no players
 # Note: A world only counts as empty when no players were in it for 10 minutes

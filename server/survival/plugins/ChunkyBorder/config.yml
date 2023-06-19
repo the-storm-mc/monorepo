@@ -20,7 +20,7 @@ map-options:
     bluemap: true
     dynmap: true
     squaremap: true
-  label: World Border
+  label: Edge of the World
   hide-by-default: false
   color: FF0000
   weight: 3
