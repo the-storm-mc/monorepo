@@ -45,28 +45,28 @@ rsync:
 down:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "docker compose -f compose.$stage.yml down"
+  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml down"
 
 sync:
   FROM +rsync
   ARG --required stage
   COPY (+build/ --stage=$stage) .
-  RUN --no-cache --push rsync --progress -a --checksum * ubuntu@minecraft.ts-mc.net:/home/ubuntu
+  RUN --no-cache --push rsync --progress -a --checksum * ubuntu@100.119.36.30:/home/ubuntu
 
 pull:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build"
+  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build"
 
 up:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "docker compose -f compose.$stage.yml up -d"
+  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml up -d"
 
 clear-plugins:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "rm -fv servers/*/$stage/plugins/*.jar"
+  RUN --no-cache --push ssh ubuntu@100.119.36.30 "rm -fv servers/*/$stage/plugins/*.jar"
 
 deploy:
   ARG --required stage
