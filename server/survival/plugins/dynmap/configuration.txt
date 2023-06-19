@@ -17,7 +17,7 @@ deftemplatesuffix: hd
 
 # Set default tile scale (0 = 128px x 128x, 1 = 256px x 256px, 2 = 512px x 512px, 3 = 1024px x 1024px, 4 = 2048px x 2048px) - 0 is default
 # Note: changing this value will result in all maps that use the default value being required to be fully rendered
-#defaulttilescale: 0
+defaulttilescale: 4
 
 # Map storage scheme: only uncomment one 'type' value
 #  filetree: classic and default scheme: tree of files, with all map data under the directory indicated by 'tilespath' setting
@@ -27,10 +27,10 @@ deftemplatesuffix: hd
 #  postgres: PostgreSQL database, at hostname:port in database, accessed via userid with password
 storage:
   # Filetree storage (standard tree of image files for maps)
-  #type: filetree
+  type: filetree
   # SQLite db for map storage (uses dbfile as storage location)
-  type: sqlite
-  dbfile: dynmap.db
+  #type: sqlite
+  #dbfile: dynmap.db
   # MySQL DB for map storage (at 'hostname':'port' with flags "flags" in database 'database' using user 'userid' password 'password' and table prefix 'prefix')
   #type: mysql
   #hostname: localhost
