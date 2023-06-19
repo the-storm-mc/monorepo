@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mutagen sync create --ignore='world*,tiles,*.db*' --name=tsmc survival/ tsmc:/home/ubuntu/servers/survival/prod/
+mutagen sync create --ignore='world*,tiles,*.db*,logs,*cache' --name=tsmc /Users/jerred/git/tsmc/server/survival/ tsmc:/home/ubuntu/servers/survival/prod/

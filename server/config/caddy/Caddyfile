@@ -6,3 +6,8 @@ livemap.ts-mc.net {
 	root * /livemap
 	file_server
 }
+
+plan.ts-mc.net {
+	root * /plan
+	file_server
+}

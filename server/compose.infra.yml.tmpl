@@ -56,9 +56,8 @@ services:
     volumes:
       - caddy-config:/config:Z
       - caddy-data:/data:Z
-      - ./site:/site:ro,Z
       - /home/ubuntu/servers/survival/prod/plugins/dynmap/web:/livemap:ro,Z
-      - ./docs:/docs:ro,Z
+      - /home/ubuntu/servers/survival/prod/plugins/plan/public_html:/plan:ro,Z
       - ./config/caddy/Caddyfile:/etc/caddy/Caddyfile:ro,Z
     restart: unless-stopped
   watchtower:
