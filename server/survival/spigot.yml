@@ -41,21 +41,45 @@ messages:
   restart: Server is restarting
 commands:
   replace-commands:
-    - setblock
-    - summon
-    - testforblock
-    - tellraw
+  - setblock
+  - summon
+  - testforblock
+  - tellraw
   spam-exclusions:
-    - /skill
+  - /skill
   silent-commandblock-console: false
   log: true
   tab-complete: 0
   send-namespaced: true
 world-settings:
   default:
+    seed-ancientcity: 20083232
+    seed-trailruins: 83469867
+    seed-buriedtreasure: 10387320
+    seed-mineshaft: default
+    seed-stronghold: default
     below-zero-generation-in-existing-chunks: true
     verbose: true
     entity-activation-range:
+      water: 16
+      villagers: 32
+      flying-monsters: 32
+      wake-up-inactive:
+        animals-max-per-tick: 4
+        animals-every: 1200
+        animals-for: 100
+        monsters-max-per-tick: 8
+        monsters-every: 400
+        monsters-for: 100
+        villagers-max-per-tick: 4
+        villagers-every: 600
+        villagers-for: 100
+        flying-monsters-max-per-tick: 8
+        flying-monsters-every: 200
+        flying-monsters-for: 100
+      villagers-work-immunity-after: 100
+      villagers-work-immunity-for: 20
+      villagers-active-for-panic: true
       animals: 64
       monsters: 64
       raiders: 128
@@ -63,6 +87,7 @@ world-settings:
       tick-inactive-villagers: true
       ignore-spectators: false
     entity-tracking-range:
+      display: 128
       players: 64
       animals: 64
       monsters: 128
@@ -90,6 +115,9 @@ world-settings:
     seed-fossil: 14357921
     seed-portal: 34222645
     growth:
+      torchflower-modifier: 100
+      glowberry-modifier: 100
+      pitcherplant-modifier: 100
       cactus-modifier: 100
       cane-modifier: 100
       melon-modifier: 100
@@ -142,7 +170,7 @@ world-settings:
 advancements:
   disable-saving: false
   disabled:
-    - minecraft:story/disabled
+  - minecraft:story/disabled
 players:
   disable-saving: false
 config-version: 12

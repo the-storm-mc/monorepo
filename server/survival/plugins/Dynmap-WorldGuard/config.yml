@@ -10,26 +10,25 @@ layer:
   # (optional) set minimum zoom level before layer is visible (0 = defalt, always visible)
   minzoom: 0
 use3dregions: false
-infowindow:
-  <div class=\"infowindow\"><span style=\"font-size:120%;">%regionname%
+infowindow: <div class=\"infowindow\"><span style=\"font-size:120%;">%regionname%
   (%parent%) - %priority%</span><br /> Owners <span style="font-weight:bold;">%playerowners%<br/>%groupowners%</span><br/>Members
   <span style="font-weight:bold;">%playermembers%<br/>%groupmembers%</span><br/>Flags<br
   /><span style="font-weight:bold;">%flags%</span></div>
 regionstyle:
-  strokeColor: "#FF0000"
+  strokeColor: '#FF0000'
   strokeOpacity: 0.8
   strokeWeight: 3
-  fillColor: "#FF0000"
+  fillColor: '#FF0000'
   fillOpacity: 0.35
-  unownedStrokeColor: "#00FF00"
+  unownedStrokeColor: '#00FF00'
 visibleregions:
-  - spawn
+- spawn
 hiddenregions: []
 custstyle:
   customregion1:
-    strokeColor: "#00FF00"
+    strokeColor: '#00FF00'
 ownerstyle:
   kingoftheworld:
-    strokecolor: "#C0C0C0"
+    strokecolor: '#C0C0C0'
 maxdepth: 16
 updates-per-tick: 20

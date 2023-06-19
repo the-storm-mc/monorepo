@@ -2,6 +2,8 @@ out
 *cache
 *.sqlite
 *.db
+*.db-shm
+*.db-wal
 *.bin
 *backup*
 *version*
@@ -47,3 +49,4 @@ plugins/VentureChat/example_config_always_up_to_date!.yml
 # this file contains a secret
 plugins/DiscordSRV/config.yml
 plugins/DiscordSRV/linkedaccounts.json
+plugins/DynamicShop/User.yml

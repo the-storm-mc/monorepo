@@ -66,7 +66,7 @@ up:
 clear-plugins:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "rm -v servers/*/$stage/plugins/*.jar"
+  RUN --no-cache --push ssh ubuntu@minecraft.ts-mc.net "rm -fv servers/*/$stage/plugins/*.jar"
 
 deploy:
   ARG --required stage
