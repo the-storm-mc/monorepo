@@ -73,11 +73,11 @@ presets:
     name: "LVLling Strategy - Distance-From-Spawn"
     strategies:
       distance-from-spawn:
-        increase-level-distance: 150
-        start-distance: 250
+        increase-level-distance: 1000
+        start-distance: 5000
         spawn-location:
-          x: default
-          z: default
+          x: 0
+          z: 0
 
   lvl-mod_spawn-blended:
     # This Strategy Preset controls the Blended addon to Spawn-Distance-Levelling, adding a Y-coordinate component to the system.
@@ -87,8 +87,8 @@ presets:
         blended-levelling:
           enabled: true
           transition-y-height: 62
-          lvl-multiplier: 0.05
-          multiplier-period: 10
+          lvl-multiplier: 0.10
+          multiplier-period: 5
           scale-downward: true
 
   random_Levelling:
@@ -111,14 +111,10 @@ presets:
         match-level: true
         use-player-max-level: false
         decrease-level: true
-        recheck-players: false
-        preserve-entity: 10s
-        player-level-scale: 1.0
-        level-cap: 30
-        tiers:
-          1-15: 1-10
-          16-30: 11-20
-          31-45: 21-25
+        recheck-players: true
+        preserve-entity: 60s
+        player-level-scale: 1.5
+        level-cap: 100
         variable: "%level%"
 
   lvl-mod_apply-variance:
@@ -150,18 +146,15 @@ presets:
       minLevel: 1
       maxLevel: 10
       multipliers:
-        max-health: 2.5
-        attack-damage: 1.0
-        ranged-attack-damage: 1.0
-        item-drop: 3.0
-        xp-drop: 5.0
-
+        max-health: .5
+        attack-damage: 1.2
+        ranged-attack-damage: 0.8
+        item-drop: 1.0
+        xp-drop: 1.0
       tiered-coloring:
-        1-2: "&#22E76B" #Green
-        3-4: "&#528CFF" #Blue
-        5-6: "&#FFCD56" #Yellow
-        7-8: "&#F2003D" #Red
-        9-10: "&#B447FF" #Purple
+        1-10: "&#22E76B" #Green
+        10-20: "&#FFCD56" #Yellow
+        30-100: "&#F2003D" #Red
         default: "&#FFFFFF" #White
       health-indicator:
         scale: 2
@@ -174,13 +167,13 @@ presets:
       minLevel: 1
       maxLevel: 25
       multipliers:
-        max-health: 5.0
+        max-health: 1.5
         movement-speed: 0.15
-        attack-damage: 2.25
-        ranged-attack-damage: 2.25
+        attack-damage: 1.5
+        ranged-attack-damage: 1.5
         creeper-blast-damage: 0.75
-        item-drop: 3.0
-        xp-drop: 5.0
+        item-drop: 2.0
+        xp-drop: 3.0
         #       Special Multipliers (0.0 Min - 1.0 Max)
         armor-bonus: 0.2
         armor-toughness: 0.15
@@ -192,13 +185,10 @@ presets:
         # creeper-blast-damage: [ '0.03', 'STACKED' ]
         # item-drop: [ '0.25', 'STACKED' ]
         # xp-drop: [ '17.5', 'STACKED' ]
-
       tiered-coloring:
-        1-5: "&#22E76B" #Green
-        6-10: "&#528CFF" #Blue
-        11-15: "&#FFCD56" #Yellow
-        16-20: "&#F2003D" #Red
-        21-25: "&#B447FF" #Purple
+        1-10: "&#22E76B" #Green
+        10-20: "&#FFCD56" #Yellow
+        30-100: "&#F2003D" #Red
         default: "&#FFFFFF" #White
       health-indicator:
         scale: 4
@@ -226,11 +216,9 @@ presets:
         knockback-resistance: 0.5
 
       tiered-coloring:
-        1-9: "&#22E76B" #Green
-        10-19: "&#528CFF" #Blue
-        20-29: "&#FFCD56" #Yellow
-        30-39: "&#F2003D" #Red
-        40-50: "&#B447FF" #Purple
+        1-10: "&#22E76B" #Green
+        10-20: "&#FFCD56" #Yellow
+        30-100: "&#F2003D" #Red
         default: "&#FFFFFF" #White
       health-indicator:
         scale: 8
@@ -259,11 +247,9 @@ presets:
         zombie-spawn-reinforcements: 0.15
 
       tiered-coloring:
-        1-19: "&#22E76B" #Green
-        20-39: "&#528CFF" #Blue
-        40-59: "&#FFCD56" #Yellow
-        60-79: "&#F2003D" #Red
-        80-100: "&#B447FF" #Purple
+        1-10: "&#22E76B" #Green
+        10-20: "&#FFCD56" #Yellow
+        30-100: "&#F2003D" #Red
         default: "&#FFFFFF" #White
       health-indicator:
         scale: 16
@@ -292,7 +278,7 @@ presets:
     #   This controls the nametag, where the health is displayed using %entity-health-rounded%
     name: "Nametag - Health Numerical"
     apply-settings:
-      nametag: "%tiered%Level %mob-lvl | %entity-health-rounded% %tiered%%heart_symbol%"
+      nametag: "%tiered%Level %mob-lvl%&f | %entity-health-rounded% %tiered%%heart_symbol%"
 
 # +-------------------------------------------------------------------------------------------LM3
 # +                                                                                          +LM3
@@ -362,7 +348,7 @@ default-rule:
       #SKELETON: ['Bones', 'Billy Bones', 'Verta Brae']
       #PILLAGER: ['Raider', 'Barbarian']
 
-    creature-death-nametag: "%tiered%Lvl %mob-lvl%&8 | &f%displayname%"
+    creature-death-nametag: "%tiered%Lvl %mob-lvl%&8 | &4%displayname%"
     death-messages:
     #  3: ['%player% was killed by a %death_nametag%!']
     #  1: ['A level %mob-lvl% %displayname% slaughtered %player%!']

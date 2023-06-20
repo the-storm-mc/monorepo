@@ -56,7 +56,7 @@ sync:
 pull:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build"
+  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build --no-cache"
 
 up:
   FROM +rsync
