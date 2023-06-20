@@ -240,21 +240,21 @@ World_aliases:
 # On networks export is disabled on Bukkit/Sponge servers.
 # -----------------------------------------------------
 Export:
-  HTML_Export_path: "Analysis Results"
-  JSON_Export_path: "Raw JSON"
+  HTML_Export_path: "html"
+  JSON_Export_path: "json"
   Parts:
     # Player pages/JSON are only written on join/leave.
-    Player_pages: false
-    Player_JSON: false
-    Players_page: false
-    Server_page: false
-    Server_JSON: false
+    Player_pages: true
+    Player_JSON: true
+    Players_page: true
+    Server_page: true
+    Server_JSON: true
   # All player pages/JSON can be exported by using /plan m export players
-  Export_player_on_login_and_logout: false
+  Export_player_on_login_and_logout: true
   # If there are multiple servers the period is divided evenly to avoid export of all servers at once
   # Also affects Players page export
   Server_refresh_period:
-    Time: 20
+    Time: 30
     Unit: MINUTES
 # -----------------------------------------------------
 # These settings affect Plugin data integration.

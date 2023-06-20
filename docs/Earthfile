@@ -30,6 +30,7 @@ build:
 
 dev:
   LOCALLY
+  RUN pipenv install
   RUN pipenv run mkdocs serve
 
 deploy:

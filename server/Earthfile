@@ -11,7 +11,7 @@ gomplate:
 render.compose:
   FROM +gomplate
   COPY compose.infra.yml.tmpl .
-  RUN --secret=BORG_PASSPHRASE=borg_passphrase --secret=DATADOG_API_KEY=datadog_api_key --secret=AWS_ACCESS_KEY_ID=aws_access_key_id --secret=AWS_SECRET_ACCESS_KEY=aws_secret_access_key gomplate -f compose.infra.yml.tmpl -o compose.infra.yml
+  RUN --no-cache --secret=BORG_PASSPHRASE=borg_passphrase --secret=DATADOG_API_KEY=datadog_api_key --secret=AWS_ACCESS_KEY_ID=aws_access_key_id --secret=AWS_SECRET_ACCESS_KEY=aws_secret_access_key gomplate -f compose.infra.yml.tmpl -o compose.infra.yml
   SAVE ARTIFACT compose.infra.yml
 
 build:
@@ -56,7 +56,7 @@ sync:
 pull:
   FROM +rsync
   ARG --required stage
-  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build --no-cache"
+  RUN --no-cache --push ssh ubuntu@100.119.36.30 "docker compose -f compose.$stage.yml pull && docker compose -f compose.$stage.yml build"
 
 up:
   FROM +rsync
