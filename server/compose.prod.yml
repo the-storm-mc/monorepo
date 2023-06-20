@@ -10,7 +10,7 @@ services:
     ports:
       - 25565:25565/tcp
       - 25565:25565/udp
-    command: -Xmx8G -Dlog4j.configurationFile=log4j2.xml -jar "../paper.jar"
+    command: -Xmx8G -Dlog4j.configurationFile=log4j2.xml -jar "../server.jar"
     restart: unless-stopped
   minecraft_creative_prod:
     container_name: minecraft_creative_prod
@@ -22,5 +22,5 @@ services:
     ports:
       - 25566:25565/tcp
       - 25566:25565/udp
-    command: -Xmx1G -jar "../paper.jar"
+    command: -Xmx1G -jar "../server.jar"
     restart: unless-stopped
