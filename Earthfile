@@ -1,5 +1,5 @@
 VERSION 0.7
-PROJECT sjerred/monorepo
+PROJECT the-storm/monorepo
 
 pipeline.push:
   PIPELINE --push
