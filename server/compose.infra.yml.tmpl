@@ -48,8 +48,7 @@ services:
     container_name: caddy
     build: config/caddy
     environment:
-      AWS_ACCESS_KEY_ID: "{{ .Env.AWS_ACCESS_KEY_ID }}"
-      AWS_SECRET_ACCESS_KEY: "{{ .Env.AWS_SECRET_ACCESS_KEY }}"
+      CF_API_TOKEN: "{{ .Env.CF_API_TOKEN }}"
     ports:
       - "80:80"
       - "443:443"

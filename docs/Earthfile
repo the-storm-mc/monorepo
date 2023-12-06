@@ -1,5 +1,5 @@
 VERSION 0.7
-PROJECT sjerred/monorepo
+PROJECT the-storm/monorepo
 
 pipenv:
   FROM python:3.11
@@ -10,13 +10,13 @@ pipenv:
 lock:
   FROM +pipenv
   COPY Pipfile* .
-  RUN --secret=MKDOCS_GH_TOKEN=mkdocs_github_token pipenv lock
+  RUN --secret=MKDOCS_GH_TOKEN=github_token pipenv lock
   SAVE ARTIFACT Pipfile.lock AS LOCAL Pipfile.lock
 
 deps:
   FROM +pipenv
   COPY Pipfile* .
-  RUN --secret=MKDOCS_GH_TOKEN=mkdocs_github_token pipenv install
+  RUN --secret=MKDOCS_GH_TOKEN=github_token pipenv install
 
 build:
   FROM +deps

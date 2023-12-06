@@ -1,5 +1,6 @@
 VERSION 0.7
-PROJECT sjerred/monorepo
+PROJECT the-storm/monorepo
+
 FROM ubuntu:jammy
 WORKDIR /workspace
 
@@ -11,7 +12,7 @@ gomplate:
 render.compose:
   FROM +gomplate
   COPY compose.infra.yml.tmpl .
-  RUN --no-cache --secret=BORG_PASSPHRASE=borg_passphrase --secret=DATADOG_API_KEY=datadog_api_key --secret=AWS_ACCESS_KEY_ID=aws_access_key_id --secret=AWS_SECRET_ACCESS_KEY=aws_secret_access_key gomplate -f compose.infra.yml.tmpl -o compose.infra.yml
+  RUN --no-cache --secret=BORG_PASSPHRASE=borg_passphrase --secret=DATADOG_API_KEY=datadog_api_key --secret=CF_API_TOKEN=cf_api_token gomplate -f compose.infra.yml.tmpl -o compose.infra.yml
   SAVE ARTIFACT compose.infra.yml
 
 build:
@@ -19,8 +20,8 @@ build:
   IF [ $stage = "infra" ]
     COPY +render.compose/ .
     COPY config config/
-    RUN --secret=BORGBASE_KEY=borgbase_key echo "$BORGBASE_KEY" | base64 -d > config/borg/key && chmod 600 config/borg/key
-    RUN --secret=BORGBASE_APPEND_KEY=borgbase_key_append_only echo "$BORGBASE_APPEND_KEY" | base64 -d > config/borg/key_append_only && chmod 600 config/borg/key_append_only
+    RUN --secret=BORGBASE_KEY=borgbase_key echo "$BORGBASE_KEY" > config/borg/key && chmod 600 config/borg/key
+    RUN --secret=BORGBASE_APPEND_KEY=borgbase_key_append_only echo "$BORGBASE_APPEND_KEY" > config/borg/key_append_only && chmod 600 config/borg/key_append_only
   ELSE IF [ $stage = "beta" ]
     COPY compose.beta.yml .
     COPY ./survival+build/ servers/survival/$stage
@@ -40,7 +41,7 @@ rsync:
   RUN apk add rsync openssh
   RUN mkdir -p /root/.ssh/
   COPY known_hosts /root/.ssh/known_hosts
-  RUN --secret=SSH_PRIVATE_KEY=ssh_private_key echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+  RUN --secret=SSH_PRIVATE_KEY=ssh_private_key echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 
 down:
   FROM +rsync
