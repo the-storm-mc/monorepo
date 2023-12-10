@@ -16,10 +16,60 @@ on:
         default: "main"
 
 jobs:
+  docs:
+    name: Deploy Documentation
+    runs-on: ubuntu-latest
+    env:
+      EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
+    environment:
+      name: docs
+      url: https://docs.ts-mc.net/
+    steps:
+      - uses: earthly/actions-setup@v1.0.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
+      - name: deploy
+        run: earthly --ci --sat monorepo --org the-storm -P ./docs+deploy
+  site:
+    name: Deploy Site
+    runs-on: ubuntu-latest
+    env:
+      EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
+    environment:
+      name: site
+      url: https://ts-mc.net/
+    steps:
+      - uses: earthly/actions-setup@v1.0.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
+      - name: deploy
+        run: earthly --ci --sat monorepo --org the-storm -P ./site+deploy
+  infra:
+    name: Deploy Infrastructure
+    runs-on: ubuntu-latest
+    env:
+      EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
+    steps:
+      - uses: earthly/actions-setup@v1.0.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
+      - name: deploy
+        run: earthly --ci --sat monorepo --org the-storm -P ./server+deploy --stage=infra
   beta:
     name: Deploy to Beta
     runs-on: ubuntu-latest
     if: ${{ !github.event.inputs.skip_beta }}
+    needs:
+      - infra
     environment:
       name: beta
       url: https://ts-mc.net
@@ -33,7 +83,7 @@ jobs:
         with:
           ref: ${{ github.event.inputs.ref }}
       - name: deploy
-        run: earthly --ci --sat monorepo --org the-storm -P +deploy.backend --stage=beta
+        run: earthly --ci --sat monorepo --org the-storm -P ./server+deploy --stage=beta
   prod:
     name: Deploy to Production
     runs-on: ubuntu-latest
@@ -53,4 +103,4 @@ jobs:
         with:
           ref: ${{ github.event.inputs.ref }}
       - name: deploy
-        run: earthly --ci --sat monorepo --org the-storm -P +deploy.backend --stage=prod
+        run: earthly --ci --sat monorepo --org the-storm -P ./server+deploy --stage=prod
