@@ -16,8 +16,8 @@ on:
         default: "main"
 
 jobs:
-  docs:
-    name: Deploy Documentation
+  docs_beta:
+    name: Deploy Documentation (beta)
     runs-on: ubuntu-latest
     env:
       EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
@@ -33,8 +33,25 @@ jobs:
           ref: ${{ github.event.inputs.ref }}
       - name: deploy
         run: earthly --push --ci --sat monorepo --org the-storm -P ./docs+deploy
-  site:
-    name: Deploy Site
+  docs_prod:
+    name: Deploy Documentation (prod)
+    runs-on: ubuntu-latest
+    env:
+      EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
+    environment:
+      name: docs
+      url: https://docs.ts-mc.net/
+    steps:
+      - uses: earthly/actions-setup@v1.0.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
+      - name: deploy
+        run: earthly --push --ci --sat monorepo --org the-storm -P ./docs+deploy --stage=prod
+  site_beta:
+    name: Deploy Site (beta)
     runs-on: ubuntu-latest
     env:
       EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
@@ -50,6 +67,23 @@ jobs:
           ref: ${{ github.event.inputs.ref }}
       - name: deploy
         run: earthly --push --ci --sat monorepo --org the-storm -P ./site+deploy
+  site_prod:
+    name: Deploy Site (prod)
+    runs-on: ubuntu-latest
+    env:
+      EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
+    environment:
+      name: site
+      url: https://ts-mc.net/
+    steps:
+      - uses: earthly/actions-setup@v1.0.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
+      - name: deploy
+        run: earthly --push --ci --sat monorepo --org the-storm -P ./site+deploy --stage=prod
   infra:
     name: Deploy Infrastructure
     runs-on: ubuntu-latest
