@@ -15,6 +15,10 @@ on:
         required: true
         default: "main"
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   docs_beta:
     name: Deploy Documentation (beta)
