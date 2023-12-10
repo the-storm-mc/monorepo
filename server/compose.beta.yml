@@ -2,7 +2,7 @@
 services:
   minecraft_survival_beta:
     container_name: minecraft_survival_beta
-    image: ghcr.io/shepherdjerred-minecraft/paper:1.20.2
+    image: ghcr.io/shepherdjerred-minecraft/paper:1.20.4
     tty: true
     stdin_open: true
     volumes:
@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
   minecraft_creative_beta:
     container_name: minecraft_creative_beta
-    image: ghcr.io/shepherdjerred-minecraft/paper:1.20.2
+    image: ghcr.io/shepherdjerred-minecraft/paper:1.20.4
     tty: true
     stdin_open: true
     volumes:

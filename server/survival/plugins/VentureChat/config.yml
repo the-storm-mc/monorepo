@@ -31,7 +31,7 @@ antispam:
   enabled: true
 
   # Number of messages to be spam
-  spamnumber: 5
+  spamnumber: 20
 
   # Amount of time in seconds for it to be spam
   spamtime: 10
