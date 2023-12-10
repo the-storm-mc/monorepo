@@ -40,6 +40,8 @@ jobs:
   docs_prod:
     name: Deploy Documentation (prod)
     runs-on: ubuntu-latest
+    needs:
+      - docs_beta
     env:
       EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
     environment:
@@ -74,6 +76,8 @@ jobs:
   site_prod:
     name: Deploy Site (prod)
     runs-on: ubuntu-latest
+    needs:
+      - site_beta
     env:
       EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
     environment:
